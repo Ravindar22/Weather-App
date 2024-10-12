@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather APP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+</head>
+<body>
+
+    <div class="wrapper">
+        <h1>Weather App</h1>
+
+        <div class="tab-container">
+            <p class="tab" data-userWeather>Your Weather</p>
+            <p class="tab" data-searchWeather>Search Weather</p>
+        </div>
+
+        <div class="weather-container">
+            
+            <!-- location grant container -->
+            <div class="sub-container grant-location-container">
+                <img src="./assets/location.png" width="80" height="80" loading="lazy">
+                <p>Grant Location Access</p>
+                <p>Allow Access to get weather Information</p>
+                <button class="btn" data-grantAccess>Grant Access</button>
+            </div>
+
+            <!-- search form container -->
+            <form class="form-container" data-searchForm>
+                <input type="text" placeholder="Search for a city" data-searchInput>
+                <button class="btn" type="submit">
+                    <img src="./assets/search.png"  loading="lazy">
+                </button>
+            </form>
+
+            <!-- loading screen container -->
+            <div class="sub-container loading-container">
+                <img src="assets/loading.gif" width="150" height="150">
+                <p>Loading</p>
+            </div>
+
+            <!-- show weather info -->
+            <div class="sub-container user-info-container">
+
+                <!-- city name & flag, weather description, Icon, temp -->
+                <div class="name">
+                    <p data-cityName></p>
+                    <img data-countryIcon>
+                </div>
+
+                <p data-weatherDesc></p>
+                <img data-weatherIcon>
+                <p data-temp></p>
+
+                <!-- 3-cards - parameters -->
+                <div class="parameter-container">
+
+                    <div class="parameter">
+                        <img src="./assets/storm.png">
+                        <p>Wind Speed</p>
+                        <p data-windspeed></p>
+                    </div>
+
+                    <div class="parameter">
+                        <img src="./assets/humidity.png">
+                        <p>Humidity</p>
+                        <p data-humidity></p>
+                    </div>
+
+                    <div class="parameter">
+                        <img src="./assets/clouds.png">
+                        <p>Cloudiness</p>
+                        <p data-cloudiness></p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- error container when city not found -->
+            <div data-errorContainer class="error-container">
+                <img src="./assets/404-error.png" alt="404 Error" class="error-image">
+                <p class="error-text">City not found</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
